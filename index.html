@@ -18,7 +18,7 @@
         <button onclick="getHieu()" type="button">-</button>
         <button onclick="getNhan()" type="button">*</button>
         <button onclick="getThuong()" type="button">:</button>
-
+        
         <button onclick="getClean()">Reset</button>
         <p>Kết quả phép tính là:</p>
         <p id="ketqua"></p>
@@ -46,21 +46,24 @@
             // }
             // else
             // {
-            document.getElementById('ketqua').innerHTML = tinhTong(Num1(), Num2());
+               
+              
+            document.getElementById('ketqua').innerHTML = tinhTong(Num1(),Num2());
+            
             // }
         }
         // Hàm Hiệu:
         function getHieu() {
-            document.getElementById('ketqua').innerHTML = tinhHieu(Num1(), Num2());
+            document.getElementById('ketqua').innerHTML = tinhHieu(Num1(),Num2());
         }
         // Hàm Nhân:
         function getNhan() {
-            document.getElementById('ketqua').innerHTML = tinhNhan(Num1(), Num2());
+            document.getElementById('ketqua').innerHTML = tinhNhan(Num1(),Num2());
         }
         // Hàm Thương:
         function getThuong() {
             if (Num2() != 0) {
-                document.getElementById('ketqua').innerHTML = tinhThuong(Num1(), Num2());
+                document.getElementById('ketqua').innerHTML = tinhThuong(Num1(),Num2());
             }
             else {
                 document.getElementById('ketqua').innerHTML = "Không thể chia được ";
@@ -70,14 +73,17 @@
         //  Hàm này để xuất giá trị INPUT:
         function Num1() {
 
-
-            return parseInt(document.getElementById('num2').value);
+            var number = document.getElementById('num1').value;
+           return parseInt(number);
             // trả về dạng NUMBER 
         }
+        
         function Num2() {
-            return parseInt(document.getElementById('num2').value);  // trả về dạng NUMBER
+            var number = document.getElementById('num2').value;
+        
+           return parseInt(number);  // trả về dạng NUMBER
         }
-
+        
         // Tập hợp các hàm làm phép tính:
         function tinhTong(a, b) {
             return a + b;
