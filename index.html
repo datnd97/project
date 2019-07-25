@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <input id="num1" type="text">
+        <input id="num2" type="text">
+        <br>
+        <br>
+        <button onclick="getTong()" type="button">+</button>
+        <button onclick="getHieu()" type="button">-</button>
+        <button onclick="getNhan()" type="button">*</button>
+        <button onclick="getThuong()" type="button">:</button>
+
+        <button onclick="getClean()">Reset</button>
+        <p>Kết quả phép tính là:</p>
+        <p id="ketqua"></p>
+    </form>
+
+
+    <script>
+        // Hàm tổng:
+
+
+
+        function getClean() {
+            document.getElementById('num1').value = " ";
+            document.getElementById('num2').value = " ";
+            document.getElementById('ketqua').innerHTML = " ";
+
+        }
+
+        function getTong() {
+            // let kiemTra = (document.getElementById('num1').value == " " || document.getElementById('num2').value == " ");
+
+            // if(kiemTra == false)
+            // {
+            //     document.getElementById('ketqua').innerHTML = "Bạn nhập không đúng yêu cầu. Mời bạn nhập lại";
+            // }
+            // else
+            // {
+            document.getElementById('ketqua').innerHTML = tinhTong(Num1(), Num2());
+            // }
+        }
+        // Hàm Hiệu:
+        function getHieu() {
+            document.getElementById('ketqua').innerHTML = tinhHieu(Num1(), Num2());
+        }
+        // Hàm Nhân:
+        function getNhan() {
+            document.getElementById('ketqua').innerHTML = tinhNhan(Num1(), Num2());
+        }
+        // Hàm Thương:
+        function getThuong() {
+            if (Num2() != 0) {
+                document.getElementById('ketqua').innerHTML = tinhThuong(Num1(), Num2());
+            }
+            else {
+                document.getElementById('ketqua').innerHTML = "Không thể chia được ";
+            }
+        }
+
+        //  Hàm này để xuất giá trị INPUT:
+        function Num1() {
+
+
+            return parseInt(document.getElementById('num2').value);
+            // trả về dạng NUMBER 
+        }
+        function Num2() {
+            return parseInt(document.getElementById('num2').value);  // trả về dạng NUMBER
+        }
+
+        // Tập hợp các hàm làm phép tính:
+        function tinhTong(a, b) {
+            return a + b;
+        }
+        function tinhNhan(a, b) {
+            return a * b;
+        }
+        function tinhHieu(a, b) {
+            return a - b;
+        }
+        function tinhThuong(a, b) {
+
+            return a / b;
+
+
+        }
+
+
+
+        //  Những cái em chưa làm được anh xem hộ em vs ạ:
+        // 1.Hàm Nếu (input có khoảng trắng và kí tự chữ) thì trả về "mong ban nhập lại".
+        // 2. Anh xem bài em clean code đã ổn chưa ạ,chỗ nào có thể clean code được thì 
+        // anh xem hộ em ạ,em clean luôn
+        // 3. Anh nhận xét bài em xem em làm thế này đã được chưa ạ; Anh cứ giao thêm yêu cầu 
+        // em cố gắng tập làm ạ.
+        
+    </script>
+</body>
+
+</html>
