@@ -38,19 +38,7 @@
         }
 
         function getTong() {
-            // let kiemTra = (document.getElementById('num1').value == " " || document.getElementById('num2').value == " ");
-
-            // if(kiemTra == false)
-            // {
-            //     document.getElementById('ketqua').innerHTML = "Bạn nhập không đúng yêu cầu. Mời bạn nhập lại";
-            // }
-            // else
-            // {
-               
-              
             document.getElementById('ketqua').innerHTML = tinhTong(Num1(),Num2());
-            
-            // }
         }
         // Hàm Hiệu:
         function getHieu() {
@@ -62,12 +50,8 @@
         }
         // Hàm Thương:
         function getThuong() {
-            if (Num2() != 0) {
-                document.getElementById('ketqua').innerHTML = tinhThuong(Num1(),Num2());
-            }
-            else {
-                document.getElementById('ketqua').innerHTML = "Không thể chia được ";
-            }
+            
+            document.getElementById('ketqua').innerHTML =(Num2()!=0) ? tinhThuong(Num1(),Num2()) : "Khong the chia duoc";
         }
 
         //  Hàm này để xuất giá trị INPUT:
